@@ -27,6 +27,11 @@ app.get("/", (req, res) => {
   res.send(`<h1>Welcome to Express API</h1>`);
 });
 
+// Health check route
+app.get("/health", (req, res) => {
+  res.status(200).send("Server is running smoothly!");
+});
+
 app.use("/auth/api/v1", require("./routes/auth.routes"));
 app.use("/resturant/api/v1", require("./routes/resturant.routes"));
 app.use("/category/api/v1", require("./routes/category.routes"));
